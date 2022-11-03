@@ -1,7 +1,5 @@
 public class Job {
 
-    // Add additional functions and data members as you find fit
-
     private long originalTimeToSleep;
     private long currTimeToSleep;
 

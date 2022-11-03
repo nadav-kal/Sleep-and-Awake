@@ -10,39 +10,32 @@ public class Main {
         Job j3 = new Job();
         j3.sleep(9);
 
-//        OS.awake();
-//        OS.awake();
-//        OS.awake();
-//        OS.awake();
-//        OS.awake();
-//        OS.awake();
-//        OS.awake();
-//        OS.awake();
-//        OS.awake();
-//        OS.awake();
-//        OS.awake();
-//        OS.awake();
-//        OS.awake();
-//        OS.awake();
+        Job j4 = new Job();
+        j4.sleep(4);
 
 
+        OS.awake();
+        OS.awake();
+        OS.awake();
+        OS.awake();
+        OS.awake();
+        OS.awake();
+        OS.awake();
+        OS.awake();
+        OS.awake();
+        OS.awake();
+        OS.awake();
+        OS.awake();
+        OS.awake();
+        OS.awake();
+        OS.awake();
+        OS.awake();
+        OS.awake();
+        OS.awake();
+        OS.awake();
+        OS.awake();
 
-//        OS.sleep(j2, 5);
 
-
-        System.out.println(OS.getSleepingJobs().poll().getCurrTimeToSleep());
-        System.out.println(OS.getSleepingJobs().poll().getCurrTimeToSleep());
-        System.out.println(OS.getSleepingJobs().poll().getCurrTimeToSleep());
-
-//        System.out.println(OS.getRunningJobs().poll().getCurrTimeToSleep());
-//        System.out.println(OS.getRunningJobs().poll().getCurrTimeToSleep());
-//        System.out.println(OS.getRunningJobs().poll().getCurrTimeToSleep());
-
-
-
-//        System.out.println(OS.getRunningJobs().poll());
-
-//        System.out.println(OS.getSleepingJobs().poll().getTimeToSleep());
 
 
     }
