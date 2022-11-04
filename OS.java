@@ -14,9 +14,26 @@ public class OS {
      * @param milliSeconds
      */
     public static void sleep(Job job, long milliSeconds) {
+        updateTimeToSleep();
         job.setOriginalTimeToSleep(milliSeconds);
         job.setCurrTimeToSleep(milliSeconds);
         sleepingJobs.add(job);
+    }
+
+    private static void updateTimeToSleep() {
+        if(!sleepingJobs.isEmpty()) {
+            Job lowestTimeJob = sleepingJobs.peek();
+            long timePassed = lowestTimeJob.getOriginalTimeToSleep() - lowestTimeJob.getCurrTimeToSleep();
+            for(Job j: sleepingJobs) {
+                if(!j.equals(lowestTimeJob)) { // lowestTimeJob is already updated
+                    j.setOriginalTimeToSleep(j.getCurrTimeToSleep() - timePassed);
+                    j.setCurrTimeToSleep(j.getCurrTimeToSleep() - timePassed);
+                }
+                else { // lowestTimeJob current time is already updated, set the original time to the current time
+                    lowestTimeJob.setOriginalTimeToSleep(lowestTimeJob.getCurrTimeToSleep());
+                }
+            }
+        }
     }
 
     /**
@@ -51,5 +68,13 @@ public class OS {
         nextSleepingJob.setCurrTimeToSleep
                 (nextSleepingJob.getCurrTimeToSleep() -
                         jobToRunning.getOriginalTimeToSleep());
+    }
+
+    public static PriorityQueue<Job> getSleepingJobs() {
+        return sleepingJobs;
+    }
+
+    public static Queue<Job> getRunningJobs() {
+        return runningJobs;
     }
 }

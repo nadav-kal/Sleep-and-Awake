@@ -24,13 +24,28 @@ public class Main {
          sleeping jobs {j1: currTimeToSleep = 9, j3: currTimeToSleep = 4(updated)}
          running jobs {j2, j4}
          */
+        Job j5 = new Job();
+        j5.sleep(8);
+        /*
+         sleeping jobs {j1: currTimeToSleep = 7(updated), j3: currTimeToSleep = 4,
+                        j5: currTimeToSleep = 8}
+         running jobs {j2, j4}
+         */
         OS.awake();
         OS.awake();
         OS.awake();
         OS.awake();
         /*
-         sleeping jobs {j1: currTimeToSleep = 3(updated)}
+         sleeping jobs {j1: currTimeToSleep = 3(updated), j5: currTimeToSleep = 8}
          running jobs {j2, j4, j3}
          */
+        OS.awake();
+        OS.awake();
+        OS.awake();
+                /*
+         sleeping jobs {j5: currTimeToSleep = 1}
+         running jobs {j2, j4, j3, j1}
+         */
+
     }
 }
