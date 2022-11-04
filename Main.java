@@ -26,6 +26,7 @@ public class Main {
          */
         Job j5 = new Job();
         j5.sleep(8);
+
         /*
          sleeping jobs {j1: currTimeToSleep = 7(updated), j3: currTimeToSleep = 4,
                         j5: currTimeToSleep = 8}
@@ -42,7 +43,7 @@ public class Main {
         OS.awake();
         OS.awake();
         OS.awake();
-                /*
+        /*
          sleeping jobs {j5: currTimeToSleep = 1}
          running jobs {j2, j4, j3, j1}
          */

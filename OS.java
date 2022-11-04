@@ -69,12 +69,4 @@ public class OS {
                 (nextSleepingJob.getCurrTimeToSleep() -
                         jobToRunning.getOriginalTimeToSleep());
     }
-
-    public static PriorityQueue<Job> getSleepingJobs() {
-        return sleepingJobs;
-    }
-
-    public static Queue<Job> getRunningJobs() {
-        return runningJobs;
-    }
 }
