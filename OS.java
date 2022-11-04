@@ -1,9 +1,11 @@
+import java.util.LinkedList;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class OS {
 
     private static PriorityQueue<Job> sleepingJobs = new PriorityQueue<>(new JobsTimeComparator());
-    private static PriorityQueue<Job> runningJobs = new PriorityQueue<>(new JobsTimeComparator());
+    private static Queue<Job> runningJobs = new LinkedList<>();
 
 
     /**
@@ -50,6 +52,4 @@ public class OS {
                 (nextSleepingJob.getCurrTimeToSleep() -
                         jobToRunning.getOriginalTimeToSleep());
     }
-
-
 }
